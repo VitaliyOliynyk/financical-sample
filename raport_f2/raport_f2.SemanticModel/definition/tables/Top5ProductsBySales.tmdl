@@ -1,6 +1,9 @@
 table Top5ProductsBySales
 	lineageTag: eb8ec778-bd31-4180-ab52-7e1b0f913412
 
+	measure 'Top 5 Products by Gross Sales' = SUM('Top5ProductsBySales'[Total Gross Sales])
+		formatString: #,0.00
+
 	partition Top5ProductsBySales = calculated
 		mode: import
 		source =

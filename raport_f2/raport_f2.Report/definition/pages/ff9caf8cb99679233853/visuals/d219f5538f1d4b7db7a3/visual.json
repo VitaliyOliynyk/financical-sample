@@ -1,0 +1,65 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "d219f5538f1d4b7db7a3",
+  "position": {
+    "x": 10.511098755399685,
+    "y": 45.548094606731965,
+    "z": 4500,
+    "height": 175,
+    "width": 1234,
+    "tabOrder": 4500
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Top5CountriesByUnits"
+                    }
+                  },
+                  "Property": "Top 5 Countries by Units Sold"
+                }
+              },
+              "queryRef": "Top5CountriesByUnits.Top 5 Countries by Units Sold",
+              "nativeQueryRef": "Top 5 Countries by Units Sold"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Top5ProductsBySales"
+                    }
+                  },
+                  "Property": "Top 5 Products by Gross Sales"
+                }
+              },
+              "queryRef": "Top5ProductsBySales.Top 5 Products by Gross Sales",
+              "nativeQueryRef": "Top 5 Products by Gross Sales"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "titleText": "Top 5 Country & Product KPIs",
+            "titleTextStyle": {
+              "fontWeight": "bold",
+              "fontSize": "14px"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

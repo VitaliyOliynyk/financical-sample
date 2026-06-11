@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "0a7787fc058cc240ce00",
   "position": {
-    "x": 348.6181087207562,
-    "y": 359.12920747615584,
+    "x": 622,
+    "y": 359,
     "z": 4000,
     "height": 327.5959112099568,
-    "width": 875.924896283307,
+    "width": 648,
     "tabOrder": 4000
   },
   "visual": {
@@ -42,11 +42,11 @@
                       "Entity": "Top5CountriesByUnits"
                     }
                   },
-                  "Property": "Top 5 Units Total"
+                  "Property": "Top 5 Countries by Units Sold"
                 }
               },
-              "queryRef": "Top5CountriesByUnits.Top 5 Units Total",
-              "nativeQueryRef": "Top 5 Units Total"
+              "queryRef": "Top5CountriesByUnits.Top 5 Countries by Units Sold",
+              "nativeQueryRef": "Top 5 Countries by Units Sold"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "Top5CountriesByUnits"
                   }
                 },
-                "Property": "Top 5 Units Total"
+                "Property": "Top 5 Countries by Units Sold"
               }
             },
             "direction": "Descending"

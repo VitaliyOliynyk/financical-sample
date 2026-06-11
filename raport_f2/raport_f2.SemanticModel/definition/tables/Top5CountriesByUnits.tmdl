@@ -2,7 +2,7 @@ table Top5CountriesByUnits
 	lineageTag: eb147253-683a-4f54-a8ea-a977280784df
 
 	/// Łączna ilość Units Sold dla top 5 krajów
-	measure 'Top 5 Units Total' = SUM('Top5CountriesByUnits'[Units Sold])
+	measure 'Top 5 Countries by Units Sold' = SUM('Top5CountriesByUnits'[Units Sold])
 		lineageTag: 4df70868-d65a-4a0d-8fbe-0c23e482f41c
 
 	measure Miara = financials[Total Units Sold]/SUM(financials[Units Sold] )

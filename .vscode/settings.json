@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /workspaces/financical-sample && python3 - <<'PY'\nfrom pathlib import Path\ntext=Path\\('raport_f2/raport_f2\\.Report/StaticResources/SharedResources/BaseThemes/CY26SU05\\.json'\\)\\.read_text\\(\\)\nfor name in \\['multiRowCard','card','cardVisual','stackedColumnChart','clusteredBarChart','clusteredColumnChart','lineChart'\\]:\n    idx=text\\.find\\(f'\"\\{name\\}\"'\\)\n    if idx!=-1:\n        print\\(name, 'found', idx\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
