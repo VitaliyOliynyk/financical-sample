@@ -1,0 +1,99 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0523dad3747094929d36",
+  "position": {
+    "x": 327.5959112099568,
+    "y": 22.774047303365982,
+    "z": 1000,
+    "height": 299.566314528891,
+    "width": 299.566314528891,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Calendar"
+                            }
+                          },
+                          "Name": "Odmiana",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarchia dat"
+                    }
+                  },
+                  "Level": "Rok"
+                }
+              },
+              "queryRef": "Calendar.Date.Odmiana.Hierarchia dat.Rok",
+              "nativeQueryRef": "Date Rok",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Calendar"
+                            }
+                          },
+                          "Name": "Odmiana",
+                          "Property": "Date"
+                        }
+                      },
+                      "Hierarchy": "Hierarchia dat"
+                    }
+                  },
+                  "Level": "Miesiąc"
+                }
+              },
+              "queryRef": "Calendar.Date.Odmiana.Hierarchia dat.Miesiąc",
+              "nativeQueryRef": "Date Miesiąc",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": "Profit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials.Profit)",
+              "nativeQueryRef": "Suma elementów Profit"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,61 @@
+table Top5CountriesByUnits
+	lineageTag: eb147253-683a-4f54-a8ea-a977280784df
+
+	/// Łączna ilość Units Sold dla top 5 krajów
+	measure 'Top 5 Units Total' = SUM('Top5CountriesByUnits'[Units Sold])
+		lineageTag: 4df70868-d65a-4a0d-8fbe-0c23e482f41c
+
+	measure Miara = financials[Total Units Sold]/SUM(financials[Units Sold] )
+		lineageTag: ef7c9134-ffbc-4a66-bf0e-bd6af3468050
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Country
+		lineageTag: 32711b8b-cc9e-47d0-ac73-f9e2be105253
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: financials[Country]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: bc4548cc-3b01-4f85-9f6b-ee1c94914b7c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: financials[Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Units Sold'
+		lineageTag: 6879b86f-69d9-463b-868f-de52a9a76c1d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Units Sold]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Top5CountriesByUnits = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE(
+				  FILTER(
+				    financials,
+				    RANKX(
+				      FILTER(
+				        ALL(financials[Country]),
+				        CALCULATE(SUM(financials[Units Sold])) > 0
+				      ),
+				      CALCULATE(SUM(financials[Units Sold])),
+				      ,
+				      DESC
+				    ) <= 5
+				  ),
+				  financials[Country],
+				  financials[Year],
+				  "Units Sold", SUM(financials[Units Sold])
+				)
+

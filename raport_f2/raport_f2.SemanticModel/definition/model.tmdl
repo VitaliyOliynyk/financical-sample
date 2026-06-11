@@ -1,0 +1,22 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["financials"]
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
+
+ref table financials
+ref table DateTableTemplate_004e65e8-c65e-41bd-b53b-e00e7ed5eacc
+ref table Calendar
+ref table LocalDateTable_90e08256-b07d-4e46-9dba-16b2298ef732
+ref table Top5CountriesByUnits
+
+ref cultureInfo pl-PL
+

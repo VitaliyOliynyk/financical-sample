@@ -1,0 +1,18 @@
+Top5CountriesByUnits =
+SUMMARIZE(
+  FILTER(
+    financials,
+    RANKX(
+      FILTER(
+        ALL(financials[Country]),
+        CALCULATE(SUM(financials[Units Sold])) > 0
+      ),
+      CALCULATE(SUM(financials[Units Sold])),
+      ,
+      DESC
+    ) <= 5
+  ),
+  financials[Country],
+  financials[Year],
+  "Units Sold", SUM(financials[Units Sold])
+)
