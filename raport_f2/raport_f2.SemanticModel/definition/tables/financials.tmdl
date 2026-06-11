@@ -6,20 +6,6 @@ table financials
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	/// Suma sprzedaży dla 5 produktów z największą wartością Gross Sales
-	measure 'Top 5 Products by Gross Sales' =
-			CALCULATE(
-			    SUM(financials[Gross Sales]),
-			    TOPN(
-			        5,
-			        ALLSELECTED(financials[Product]),
-			        CALCULATE(SUM(financials[Gross Sales])),
-			        DESC
-			    )
-			)
-		formatString: #,0.00
-		lineageTag: b1d28317-2adf-42d0-bb67-edabd5b44a7a
-
 	column Segment
 		dataType: string
 		lineageTag: 7eea3827-6026-47ad-abea-92708621ca5f
