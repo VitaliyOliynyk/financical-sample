@@ -1,0 +1,19 @@
+table Top5ProductsBySales
+	lineageTag: eb8ec778-bd31-4180-ab52-7e1b0f913412
+
+	partition Top5ProductsBySales = calculated
+		mode: import
+		source =
+				TOPN(
+				    5,
+				    SUMMARIZE(
+				        financials,
+				        financials[Product],
+				        "Total Gross Sales", SUM(financials[Gross Sales]),
+				        "Total Units Sold", SUM(financials[Units Sold]),
+				        "Total Profit", SUM(financials[Profit])
+				    ),
+				    [Total Gross Sales],
+				    DESC
+				)
+

@@ -17,6 +17,7 @@ ref table DateTableTemplate_004e65e8-c65e-41bd-b53b-e00e7ed5eacc
 ref table Calendar
 ref table LocalDateTable_90e08256-b07d-4e46-9dba-16b2298ef732
 ref table Top5CountriesByUnits
+ref table Top5ProductsBySales
 
 ref cultureInfo pl-PL
 
